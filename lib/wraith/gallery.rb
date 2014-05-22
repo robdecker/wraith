@@ -11,6 +11,7 @@ class Wraith::GalleryGenerator
   TEMPLATE_LOCATION = File.expand_path('gallery_template/gallery_template.erb', File.dirname(__FILE__))
   TEMPLATE_BY_DOMAIN_LOCATION = File.expand_path('gallery_template/gallery_template.erb', File.dirname(__FILE__))
   BOOTSTRAP_LOCATION = File.expand_path('gallery_template/bootstrap.min.css', File.dirname(__FILE__))
+  JS_LOCATION = File.expand_path('gallery_template/script.js', File.dirname(__FILE__))
 
   def initialize(config)
     @wraith = Wraith::Wraith.new(config)
@@ -89,6 +90,7 @@ class Wraith::GalleryGenerator
     directories = parse_directories(@location)
     generate_html(@location, directories, TEMPLATE_BY_DOMAIN_LOCATION, dest, withPath)
     FileUtils.cp(BOOTSTRAP_LOCATION, "#{@location}/bootstrap.min.css")
+    FileUtils.cp(JS_LOCATION, "#{@location}/script.js")
   end
 
   class ErbBinding < OpenStruct

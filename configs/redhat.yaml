@@ -1,0 +1,55 @@
+#Headless browser option
+browser:
+  webkit: "phantomjs"
+  # gecko: "slimerjs"
+
+#If you want to have multiple snapping files, set the file name here
+snap_file: "lib/wraith/javascript/snap.js"
+
+# Type the name of the directory that shots will be stored in
+directory:
+  - 'shots'
+
+# Add only 2 domains, key will act as a label
+domains:
+  local: "http://local.redhat.com"
+  remote: "http://web-dev-drupal-mgodbolt.devlab.redhat.com"
+
+#Type screen widths below, here are a couple of examples
+screen_widths:
+  # - 320
+  # - 768
+  - 1280
+
+#Type page URL paths below, here are a couple of examples
+paths:
+  # home: /en/customers
+  # pages1: /en/technologies/enterprise-linux/openstack-platform
+  pages2: /en/success-stories/state-tennessee
+  blog1: /en/about/blog/raising-bar-open-source-capabilities-cisco-and-red-hat
+  # blog2: /en/blog-post-category/cloud
+  # press1: /en/about/newsroom
+  # press2: /en/about/press-releases/red-hat-expands-north-american-sales-and-channel-leadership-team
+  # training1: /en/services/training/jb346-advanced-jboss-administration
+  # training2: /en/training-curriculum
+  # training3: /en/training-listing
+  # resources1: /en/resources?search=&page=1
+  # resources2: /en/resources/purchasing-red-hat-enterprise-linux
+  # search: /en/search/linux
+  # video1: /en/about/videos/red-hat-certifications-openstack-cloud-and-more
+  # video2: /en/video-channel/video-channel-1
+  # events: /en/about/events
+
+# If you don't want to name the paths explicitly you can use a yaml
+# collection as follows, and names will be derived by replacing / with _
+#
+# paths:
+#  - /imghp
+#  - /maps
+
+#Amount of fuzz ImageMagick will use
+fuzz: '20%'
+
+#Set the number of days to keep the site spider file
+spider_days:
+  - 10

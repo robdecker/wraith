@@ -2,10 +2,32 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-        <style type="text/css">
+         <style type="text/css">
             .short-screenshot {
                 height: 200px;
                 width: 200px;
+            }
+            .overlay {
+                display: none;
+                position: absolute;
+                width: 95%;
+                height: 95%;
+                left: 2.5%;
+                top:2.5%;
+            }
+            .overlay.active {
+                display: block;
+            }
+            .overlay img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                max-width: 100%;
+                height: auto;
+                margin: 0 auto;
+            }
+            .overlay img.top {
+                z-index: 100;
             }
         </style>
     </head>
@@ -33,7 +55,7 @@
                             <h2><%= dir %></h2>
                         </div>
                         <% sizes.to_a.sort.each do |size, files| %>
-                            <div class="row">
+                            <div class="row image-group">
                                 <h3 class="col-lg-1 text-muted"><%=size%>px</h3>
                                 <% files[:variants].each do |file| %>
                                     <div class="col-lg-3">
@@ -59,5 +81,14 @@
                 </div>
             </div>
         </div>
+        <div class="overlay">
+
+        </div>
+        <div class="controls">
+            <a class="up" href="#">+1</a>
+            <a class="down" href="#">-1</a>
+        </div>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="/script.js"></script>
     </body>
 </html>
