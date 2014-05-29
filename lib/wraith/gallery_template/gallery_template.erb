@@ -18,16 +18,29 @@
             .overlay.active {
                 display: block;
             }
-            .overlay img {
+            .overlay .img {
                 position: absolute;
                 top: 0;
                 left: 0;
-                max-width: 100%;
-                height: auto;
+                width: 100%;
+                background: white;
+            }
+            .overlay img {
+                display: block;
                 margin: 0 auto;
             }
-            .overlay img.top {
+            .overlay .img.top {
                 z-index: 100;
+            }
+            .controls {
+                z-index: 200;
+                position: fixed;
+                top: 0;
+            }
+            .controls .close {
+                margin-left: 10px;
+                background: #eee;
+                opacity: 1;
             }
         </style>
     </head>
@@ -84,10 +97,9 @@
         <div class="overlay">
 
         </div>
-        <div class="controls">
-            <a class="up" href="#">+1</a>
-            <a class="down" href="#">-1</a>
-        </div>
+        <ul class="controls pager">
+
+        </ul>
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="/script.js"></script>
     </body>
