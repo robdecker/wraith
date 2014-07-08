@@ -47,7 +47,7 @@
     <body>
         <div class="container">
             <div class="row page-header">
-                <h1>List of screenshots for <%= location %> </h1>
+                <h1>List of screenshots for <%= location %> <small>taken <%= Time.now.strftime('%Y/%m/%d %H:%M:%S') %></small></h1>
             </div>
             <div class="row">
                 <!-- <%= directories.length %> -->
@@ -55,7 +55,7 @@
                     <div class="panel">
                         <div class="panel-heading">Screenshots:</div>
                         <ul class="list-group list-group-flush">
-                            <% directories.keys.sort.each do |dir| %>
+                            <% directories.keys.each do |dir| %>
                                 <li class="list-group-item"><a href="#<%=path%><%=dir%>"><%=dir%></a></li>
                             <% end %>
                         </ul>
@@ -85,7 +85,7 @@
                                         </a>
                                     <% end %>
                                     <p class="text-center">diff</p>
-                                    <p class="text-center text-muted"><%=files[:data]%> percent different</p>
+                                    <p class="text-center text-muted"><%=files[:data]%> % different</p>
 
                                 </div>
                             </div>
